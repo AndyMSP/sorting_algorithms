@@ -33,7 +33,8 @@ int partition(int *array, int low, int high, size_t size)
 
 	array[high] = array[i + 1];
 	array[i + 1] = pivot;
-	print_array(array, size);
+	if (array[high] != pivot)
+		print_array(array, size);
 
 	return (i + 1);
 }
