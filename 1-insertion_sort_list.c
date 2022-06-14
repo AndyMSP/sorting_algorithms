@@ -53,26 +53,25 @@ void swap_node_left_1(listint_t *node, listint_t **head)
 		pos = 2;
 	if (node->next == NULL)
 		pos = 3;
-
+	if (node->next == NULL && node->prev->prev == NULL)
+		pos = 4;
 	/*assign variable to all affected nodes*/
 	n3 = node;
-	if (pos != 3)
+	if (pos != 3 && pos != 4)
 		n4 = node->next;
 	n2 = node->prev;
-	if (pos != 1)
+	if (pos != 1 && pos != 4)
 		n1 = node->prev->prev;
-
 	/*assign temporary variables for substitution*/
-	if (pos != 1)
+	if (pos != 1 && pos != 4)
 		a = n1->next;
 	else
 		a = *head;
 	b = n2->prev;
 	c = n2->next;
 	d = n3->next;
-
 	/*replace prev and next values for each node*/
-	if (pos != 1)
+	if (pos != 1 && pos != 4)
 		n1->next = c;
 	else
 		*head = c;
@@ -80,6 +79,6 @@ void swap_node_left_1(listint_t *node, listint_t **head)
 	n3->next = a;
 	n2->prev = c;
 	n2->next = d;
-	if (pos != 3)
+	if (pos != 3 && pos != 4)
 		n4->prev = a;
 }
