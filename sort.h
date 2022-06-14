@@ -42,4 +42,7 @@ void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
 
 
+/*****Additional function prototypes*****/
+void swap_node_left_1(listint_t *node, listint_t **head);
+
 #endif
