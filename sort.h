@@ -44,5 +44,7 @@ void print_list(const listint_t *list);
 
 /*****Additional function prototypes*****/
 void swap_node_left_1(listint_t *node, listint_t **head);
+int partition(int *array, int low, int high, size_t size);
+void qs_recursive(int *array, int low, int high, size_t size);
 
 #endif
