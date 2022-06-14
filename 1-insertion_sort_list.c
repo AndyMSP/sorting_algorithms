@@ -11,10 +11,11 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *head, *node;
 
-	head = *list;
-
-	if (list == NULL || head == NULL)
+	if (list == NULL)
 		return;
+	if (*list == NULL)
+		return;
+	head = *list;
 	if (head->next == NULL)
 		return;
 
